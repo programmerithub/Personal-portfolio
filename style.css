@@ -1,0 +1,126 @@
+
+:root {
+  --alabaster: #f9f6f1;
+  --iron: #d8dadc;
+  --spicy-mix: #8a5a44;
+  --masala: #40312f;
+  --text-light: #DCDEDD;
+  --bg-dark: #121212;
+  --text-dark: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--alabaster);
+  color: var(--masala);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+header {
+  background-color: var(--spicy-mix);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  background-color: var(--masala);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--iron);
+  color: var(--masala);
+  transform: scale(1.05);
+}
+
+section {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 1s ease forwards;
+}
+
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.4s; }
+section:nth-of-type(4) { animation-delay: 0.6s; }
+section:nth-of-type(5) { animation-delay: 0.8s; }
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--spicy-mix);
+  border-bottom: 2px solid var(--iron);
+  padding-bottom: 10px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid var(--masala);
+  border-radius: 5px;
+  background-color: white;
+  width: 100%;
+}
+
+form button {
+  padding: 12px;
+  background-color: var(--spicy-mix);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+form button:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: var(--masala);
+  color: var(--text-light);
+  text-align: center;
+  padding: 20px;
+}
+
+.toggle-darkmode {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  color: var(--masala);
+  font-weight: bold;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
